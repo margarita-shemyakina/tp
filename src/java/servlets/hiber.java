@@ -12,7 +12,7 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 /**
  *
- * @author 17675
+ * @author 17695
  */
 public class hiber {
     
