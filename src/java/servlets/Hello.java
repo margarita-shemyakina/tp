@@ -25,7 +25,6 @@ import org.hibernate.SessionFactory;
 //главный класс, который наследован от HttpServlet
 
 public class MainServlet extends HttpServlet {
-
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
      * methods.
@@ -69,50 +68,22 @@ public class MainServlet extends HttpServlet {
                     printWriter.println("<br/>");
                     }
                 }
-                printWriter.print("<p> Info about groups (name and count of students) ");
-                printWriter.println("<br/>");
-                for (Gruppyi group: gruppyi){
-                    printWriter.print(group.getNazvanie()+" "+ group.getStudentyis().size());
-                    printWriter.println("<br/>");
-                }
-                printWriter.println("</p>");
-                printWriter.print("<p> Info about A");
-                for (Gruppyi group: gruppyi){
-                    if (group.getNazvanie().startsWith("A")){
-                        printWriter.println("<br/>");
-                        printWriter.print(group.getNazvanie());
-                    }
-                }
                 if(enteredValue!=null){
                     for (Gruppyi group: gruppyi){
-                    if (group.getNazvanie().equals(enteredValue)){
-                        printWriter.println("<br/>");
-                        printWriter.print("Group " + group.getNazvanie() + " removed");
-                        gruppyi.remove(group);
-                        printWriter.println("<br/>");
+                        if (group.getNazvanie().equals(enteredValue)){
+                            printWriter.println("<br/>");
+                            printWriter.print("Group " + group.getNazvanie() + " removed");
+                            gruppyi.remove(group);
+                            printWriter.println("<br/>");
+                        }
                     }
-                    }
-                }
-                for (Gruppyi group : gruppyi)
-                {
-                    List<Studentyi> students = group.getStudentyis();
-                    for(Studentyi student : students){
-                    printWriter.print(student.getFamiliya()+" "+student.getImya()+" "+student.getOtchestvo() + " " + student.getGruppyi().getNazvanie());
-                    printWriter.println("<br/>");
-                    }
-                }
-                printWriter.print("<p> Info about groups (name and count of students) ");
-                printWriter.println("<br/>");
-                for (Gruppyi group: gruppyi){
-                    printWriter.print(group.getNazvanie()+" "+ group.getStudentyis().size());                   
-                    printWriter.println("<br/>");
                 }
                 printWriter.println("</p>");
-                printWriter.print("<p> Info about A");
+                printWriter.print("<p> Info about It (name and count of students) ");
                 for (Gruppyi group: gruppyi){
-                    if (group.getNazvanie().startsWith("A")){
+                    if (group.getNazvanie().startsWith("It")){
                         printWriter.println("<br/>");
-                        printWriter.print(group.getNazvanie());
+                        printWriter.print(group.getNazvanie()+" "+ group.getStudentyis().size());
                     }
                 }
                 printWriter.println("</p>");
